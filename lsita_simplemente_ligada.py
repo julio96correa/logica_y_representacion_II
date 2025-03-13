@@ -35,17 +35,6 @@ class LSL:
             nodo_actual = self.cabecera
 
 
-
-
-
-
-
-
-
-
-
-
-
     def buscar(self, valor):
         nodo_actual = self.cabecera
         pos = 0
@@ -58,6 +47,36 @@ class LSL:
         print("Valor no encontrado")
         return False
 
+    def buscar_binario(self, cabecera, valor):
+        nodo_actual = cabecera
+        fin = None
+        while True:
+            h = self.nodo_medio(nodo_actual, fin)
+            if h == None:
+                return None
+            if h.valor == valor:
+                return h.valor
+            elif h.valor < valor:
+                nodo_actual = h.siguiente
+            else:
+                fin = h
+            if not(fin == None or fin != nodo_actual):
+                break
+            return None
+    
+    def nodo_medio(self, cabecera, fin):
+        if cabecera is None:
+            return None
+        f = cabecera
+        l = cabecera.siguiente
+        while l != fin:
+            l = l.siguiente
+            if l != fin:
+                l = l.siguiente
+                f = f.siguiente
+        return f
+
+             
 
 def main():
     Lista = LSL()
