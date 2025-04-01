@@ -45,9 +45,9 @@ def main():
         
         valor = input("Ingrese un dato: ")
         pila.apilar(valor)
-    nueva_pila = Pila.crear_pila_nueva(pila, tamano)
     print("Pila original")
     pila.mostrar()
+    nueva_pila = Pila.crear_pila_nueva(pila, tamano)
     print("Pila nueva")
     nueva_pila.mostrar()
     
