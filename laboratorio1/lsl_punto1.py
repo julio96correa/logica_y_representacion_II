@@ -1,13 +1,29 @@
 class Nodo:
+    """
+    Representa un nodo de una lista simplemente enlazada.
+    
+    Atributos:
+        valor (int): Dato almacenado en el nodo.
+        siguiente (Nodo): Referencia al siguiente nodo en la lista.
+    """
     def __init__(self, valor):
         self.valor = valor
         self.siguiente = None
 
 class LSL:
+    """
+    Implementa una lista simplemente enlazada.
+    """
     def __init__(self):
         self.cabecera = None
     
     def insertar(self, valor):
+        """
+        Inserta un nuevo nodo al final de la lista.
+        
+        Parámetros:
+            valor: Dato a insertar en la lista
+        """
         nuevo_nodo = Nodo(valor)
         if self.cabecera is None:
             self.cabecera = nuevo_nodo
@@ -29,6 +45,19 @@ class LSL:
             
     @staticmethod
     def concatenar(Lista_1, Lista_2):
+        """
+        Concatena dos listas enlazadas en una nueva.
+        Se ha decidido implementarla como método estático
+        ya que se crea una tercera lista y no se modifica ninguna
+        de los dos listas originales.
+        
+        Parámetros:
+            Lista_1 (LSL): primera lista
+            Lista_2 (LSL): Segunda lista
+            
+        Retorna:
+            LSL: Nueva lista resultado de la concatenación.
+        """
         nueva_lsl = LSL()
         nodo_actual = Lista_1.cabecera
         while nodo_actual:
@@ -43,6 +72,12 @@ class LSL:
         return nueva_lsl
    
     def dividir(self):
+        """
+        Divide la lista en dos mitades.
+        
+        Retorna:
+            tupla: Dos listas LSL (izquierda y derecha).
+        """
         if self.cabecera is None:
             return None, None 
         tortuga = self.cabecera
@@ -57,6 +92,12 @@ class LSL:
         return izquierda, derecha  
         
     def merge_sort(self):
+        """
+        Ordena la lista usando Merge Sort.
+        
+        Retorna:
+            LSL: Lista ordenada.
+        """
         if self.cabecera is None or self.cabecera.siguiente is None:
             return self
         izquierda, derecha = self.dividir()
@@ -68,6 +109,16 @@ class LSL:
     
     @staticmethod
     def fusionar(izquierda, derecha):
+        """
+        Fusiona dos listas ordenadas en una sola lista ordenada.
+        
+        Parámetros:
+            izquierda (LSL): primera lista ordenada.
+            derecha (LSL): segunda lista ordenada.
+        
+        Retorna:
+            LSL: Lista resultante de la fusión ordenada.
+        """
         lista_ordenada = LSL()
         nodo_izquierdo = izquierda.cabecera
         nodo_derecho = derecha.cabecera
