@@ -7,18 +7,16 @@ class Nodo():
 class LDL():
     def __init__(self):
         self.cabecera = None
+        self.cola = None
         
     def encolar(self, valor):
         nuevo_nodo = Nodo(valor)
-        if self.cabecera is None:
-            self.cabecera = nuevo_nodo
-            return
-
-        nodo_actual = self.cabecera
-        while nodo_actual.siguiente is not None:
-            nodo_actual = nodo_actual.siguiente
-        nodo_actual.siguiente = nuevo_nodo
-        nuevo_nodo.anterior = nodo_actual
+        if self.cola is None:
+            self.cabecera = self.cola = nuevo_nodo
+        else:
+            self.cola.siguiente = nuevo_nodo
+            nuevo_nodo.anterior = self.cola
+            self.cola = nuevo_nodo
             
     def mostrar(self):
         nodo_actual = self.cabecera
