@@ -1,14 +1,31 @@
 class Nodo():
+    """
+    Representa un nodo de una lista doblemente enlazada (LDL).
+
+    Atributos:
+        valor (int): Dato almacenado en el nodo.
+        anterior (Nodo): Referencia al nodo anterior en la lista.
+        siguiente (Nodo): Referencia al siguiente nodo en la lista.
+    """
     def __init__(self, valor):
         self.valor = valor
         self.anterior = None
         self.siguiente = None
 
 class LDL():
+    """
+    Implementa una Lista Doblemente Enlazada (LDL).
+    """
     def __init__(self):
         self.cabecera = None
 
     def insertar(self, valor):
+        """
+        Inserta un nuevo nodo al final de la lista.
+
+        Parámetros:
+            valor (int): Dato a insertar en la lista.
+        """
         nuevo_nodo = Nodo(valor)
         if self.cabecera is None:
             self.cabecera = nuevo_nodo
@@ -20,6 +37,12 @@ class LDL():
         nuevo_nodo.anterior = nodo_actual
 
     def dividir(self):
+        """
+        Divide la lista en dos mitades.
+
+        Retorna:
+            tupla: Dos listas LDL (izquierda y derecha).
+        """
         if self.cabecera is None:
             return None, None
         tortuga = self.cabecera
@@ -36,6 +59,15 @@ class LDL():
         return izquierda, derecha
 
     def merge_sort(self, descendente=False):
+        """
+        Ordena la lista enlazada usando Merge Sort.
+
+        Parámetros:
+            descendente (bool): Indica si el orden debe ser descendente.
+
+        Retorna:
+            LDL: Lista ordenada.
+        """
         if self.cabecera is None or self.cabecera.siguiente is None:
             return self
         izquierda, derecha = self.dividir()
@@ -45,6 +77,18 @@ class LDL():
 
     @staticmethod
     def fusionar(izquierda, derecha, descendente):
+        """
+        Fusiona dos listas ordenadas en una sola lista ordenada.
+        Se usa @staticmethod ya que se trabaja sobre una lista nueva.
+        
+        Parámetros:
+            izquierda (LDL): Primera lista ordenada.
+            derecha (LDL): Segunda lista ordenada.
+            descendente (bool): Indica si el orden debe ser descendente.
+
+        Retorna:
+            LDL: Lista resultante de la fusión ordenada.
+        """
         lista_ordenada = LDL()
         nodo_izquierdo = izquierda.cabecera if izquierda else None
         nodo_derecho = derecha.cabecera if derecha else None
@@ -68,6 +112,12 @@ class LDL():
         return lista_ordenada
     
     def eliminar(self, valor):
+        """
+        Elimina el primer nodo con el valor dado en la lista.
+
+        Parámetros:
+            valor (int): Dato a eliminar en la lista.
+        """
         nodo_actual = self.cabecera
         
         if nodo_actual is None:
@@ -90,6 +140,9 @@ class LDL():
             
 
     def eliminar_repetidos(self):
+        """
+        Elimina los nodos con valores repetidos en la lista.
+        """
         nodo_actual = self.cabecera
         while nodo_actual:
             if nodo_actual.siguiente is None:
