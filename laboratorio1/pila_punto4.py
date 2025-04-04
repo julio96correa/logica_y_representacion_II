@@ -1,3 +1,13 @@
+"""
+Nombre del archivo: pila_punto4.py
+
+Descripción:
+    Implementación de una pila que se creará a partir del proceso de desapilar una pila original.
+
+Autores:
+    - Julio Cesar Correa Ocampo
+    - Diego Alejandro Vergara Ruiz
+"""
 class Pila:
     """
     Implementación de una estructura de datos tipo pila.

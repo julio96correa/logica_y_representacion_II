@@ -1,3 +1,14 @@
+"""
+Nombre del archivo: ldl_pila_cc_punto5.py
+
+Descripción:
+    Implementación de una ldl utilizando cola circular,
+    se usa lógica de colas para encolar y de pilas para desapilar.
+
+Autores:
+    - Julio Cesar Correa Ocampo
+    - Diego Alejandro Vergara Ruiz
+"""
 class Nodo:
     """
     Representa un nodo en una lista doblemente enlazada circular.

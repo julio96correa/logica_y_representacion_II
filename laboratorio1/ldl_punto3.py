@@ -1,3 +1,13 @@
+"""
+Nombre del archivo: ldl_punto3.py
+
+Descripción:
+    Implementación de una ldl utilizando cola no circular.
+
+Autores:
+    - Julio Cesar Correa Ocampo
+    - Diego Alejandro Vergara Ruiz
+"""
 class Nodo():
     """
     Representa un nodo de una lista doblemente enlazada.

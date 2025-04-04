@@ -1,3 +1,13 @@
+"""
+Nombre del archivo: lsl_punto1.py
+
+Descripción:
+   Implementación de una lsl donde se concatenan dos lsl y luego se ordena usando Merge Sort.
+
+Autores:
+    - Julio Cesar Correa Ocampo
+    - Diego Alejandro Vergara Ruiz
+"""
 class Nodo:
     """
     Representa un nodo de una lista simplemente enlazada.

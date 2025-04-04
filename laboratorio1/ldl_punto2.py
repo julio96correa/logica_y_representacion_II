@@ -1,3 +1,14 @@
+"""
+Nombre del archivo: ldl_punto2.py
+
+Descripción:
+    Implementación de una ldl, se usa Merge Sort para ordenar tanto de forma ascendente como descendente y
+    se eliminan nodos repetidos.
+
+Autores:
+    - Julio Cesar Correa Ocampo
+    - Diego Alejandro Vergara Ruiz
+"""
 class Nodo():
     """
     Representa un nodo de una lista doblemente enlazada (LDL).
