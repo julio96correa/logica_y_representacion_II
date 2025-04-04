@@ -1,17 +1,42 @@
 class Pila:
+    """
+    Implementación de una estructura de datos tipo pila.
+
+    Atributos:
+        V (list): Lista que almacena los elementos de la pila.
+        cima (int): Índice del último elemento apilado.
+    """
     def __init__(self, n):
         self.V = [None] * n
         self.cima = -1
     
     def pila_vacia(self):
+        """
+        Verifica si la pila está vacía.
+        
+        Retorna:
+            bool: True si la pila está vacía, False en caso contrario.
+        """
         if self.cima == -1:
             return True
         
     def pila_llena(self):
+        """
+        Verifica si la pila está llena.
+        
+        Retorna:
+            bool: True si la pila está llena, False en caso contrario.
+        """
         if self.cima == len(self.V) - 1:
             return True
         
     def apilar(self, valor):
+        """
+        Agrega un elemento a la pila.
+        
+        Parámetros:
+            valor: Elemento a agregar a la pila.
+        """
         if self.pila_llena():
             print("La pila está llena") 
         else: 
@@ -19,6 +44,12 @@ class Pila:
             self.V[self.cima] = valor
     
     def desapilar(self):
+        """
+        Elimina y retorna el elemento en la cima de la pila.
+        
+        Retorna:
+            valor_a_elimnar: Elemento eliminado de la pila o None si la pila está vacía.
+        """
         if self.pila_vacia():
             print("La pila está vacía")
             return None
@@ -29,6 +60,17 @@ class Pila:
     
     @staticmethod
     def crear_pila_nueva(pila_original, n):
+        """
+        Crea una nueva pila con los elementos de la pila original.
+        Se usa método estático ya que se trabaja sobre una pila nueva.
+        
+        Parámetros:
+            pila_original (Pila): Pila a copiar.
+            n (int): Tamaño de la nueva pila.
+        
+        Retorna:
+            Pila: Nueva pila con los mismos elementos que la original.
+        """
         pila_nueva = Pila(n)
         while pila_original.cima != -1:
             pila_nueva.apilar(pila_original.desapilar())
