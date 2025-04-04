@@ -1,15 +1,32 @@
 class Nodo():
+    """
+    Representa un nodo de una lista doblemente enlazada.
+    
+    Atributos:
+        valor (int): Dato almacenado en el nodo.
+        anterior (Nodo): Referencia al nodo anterior en la lista.
+        siguiente (Nodo): Referencia al siguiente nodo en la lista.
+    """
     def __init__(self, valor):
         self.valor = valor
         self.anterior = None
         self.siguiente = None
         
 class LDL():
+    """
+    Implementa una Lista Doblemente Enlazada (LDL) con operación de encolar.
+    """
     def __init__(self):
         self.cabecera = None
         self.cola = None
         
     def encolar(self, valor):
+        """
+        Agrega un nuevo nodo al final de la lista, siguiendo la lógica de una cola.
+        
+        Parámetros:
+            valor: Dato a insertar en la lista.
+        """
         nuevo_nodo = Nodo(valor)
         if self.cola is None:
             self.cabecera = self.cola = nuevo_nodo

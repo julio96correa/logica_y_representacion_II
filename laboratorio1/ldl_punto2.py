@@ -3,7 +3,7 @@ class Nodo():
     Representa un nodo de una lista doblemente enlazada (LDL).
 
     Atributos:
-        valor (int): Dato almacenado en el nodo.
+        valor: Dato almacenado en el nodo.
         anterior (Nodo): Referencia al nodo anterior en la lista.
         siguiente (Nodo): Referencia al siguiente nodo en la lista.
     """
